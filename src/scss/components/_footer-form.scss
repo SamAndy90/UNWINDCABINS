@@ -1,0 +1,91 @@
+.footer-form {
+    padding-bottom: rem(50);
+    border-bottom: 1px solid #346769;
+    &__title {
+        font-weight: 600;
+        line-height: rem(20);
+        color: #c5fbd8;
+        margin-bottom: rem(16);
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @media (max-width: $mobile) {
+            align-items: center;
+        }
+    }
+    &__text {
+        font-size: rem(14);
+        line-height: rem(24);
+        color: rgba(234, 234, 241, 0.8);
+        @media (max-width: $mobile) {
+            max-width: 70%;
+            text-align: center;
+        }
+        @media (max-width: $mobileSmall) {
+            max-width: 100%;
+        }
+    }
+    &__form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        box-sizing: border-box;
+        @media (max-width: $mobile) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__email {
+        height: 54px;
+        padding-left: rem(20);
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        width: rem(304);
+        &::placeholder {
+            font-size: rem(14);
+            line-height: rem(15);
+            color: #bec4d9;
+        }
+        @media (max-width: $mobile) {
+            width: 70%;
+        }
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+    &__btn {
+        display: block;
+        height: 54px;
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: rem(19);
+        color: #1f3d3e;
+        background: #f4bd4f;
+        border-radius: 6px;
+        width: rem(195);
+        transition: all ease 0.4s;
+        &:hover {
+            color: #ffffff;
+            background: #e6a74f;
+        }
+        @media (max-width: $mobile) {
+            width: 70%;
+        }
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+}

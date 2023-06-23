@@ -1,0 +1,115 @@
+.page__experiences {
+    padding-top: rem(56);
+    padding-bottom: rem(60);
+    background: #F2FAF9;
+}
+
+.experiences {
+    &__title {
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+        font-size: rem(28);
+        line-height: rem(26);
+        color: #22223C;
+        margin-bottom: rem(33);
+        position: relative;
+        &--underline {
+            position: absolute;
+            height: 2px;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            background: $yellow;
+            transition: all ease 0.6s;
+            &._active {
+                width: 122px;
+            }
+        }
+        @media (max-width: $mobile) {
+            margin-bottom: rem(16);
+        }
+
+    }
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: rem(40);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: rem(30);
+        }
+    }
+    &__description {
+        line-height: rem(28);
+        color: #47475F;
+    }
+    &__link {
+        font-weight: 500;
+        line-height: rem(24);
+        color: #4A4A4A;
+        min-width: 164px;
+        transition: all ease 0.3s;
+        position: relative;
+        align-self: flex-end;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: -1px;
+            background: #4A4A4A;
+            transform: scaleX(0);
+            transition: all ease 0.3s;
+        }
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+    &__cards {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: (rem(12));
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+    &__card {
+        flex: 0 1 33.3333%;
+        @media (max-width: $mobile) {
+            flex: 0 1 100%;
+        }
+
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all ease 0.7s;
+        &:hover {
+            transform:translateY(-10px);
+            box-shadow: 0 0 20px rgba(26, 55, 36, 0.5);
+        }
+    }
+    & .card {
+        &__info {
+            padding: rem(23) rem(20);
+            background: #596363;
+        }
+        &__subtitle {
+            line-height: rem(12);
+            margin-bottom: 8px;
+        }
+        &__title {
+            font-family: 'Source Serif Pro';
+            font-weight: 700;
+            line-height: rem(24);
+            flex: 1 1 auto;
+        }
+        &__description {
+            color: #fff;
+            letter-spacing: 0.8px;
+            margin-bottom: initial;
+        }
+    }
+}

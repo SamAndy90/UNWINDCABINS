@@ -1,0 +1,134 @@
+.footer-menu {
+    padding: rem(80) 0 rem(86);
+    &__menu {
+        @media (min-width: $mobile) {
+            display: grid;
+            grid-template: auto / 1fr 1fr minmax(auto, 165px) 1fr 1fr;
+            column-gap: 10px; 
+        }
+    }
+    &__title {
+        font-weight: 600;
+        line-height: rem(20);
+        color: #c5fbd8;
+        margin-bottom: rem(22);
+        & svg {
+            display: none;
+        }
+        @media (max-width: $mobile) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: rem(14) rem(20);
+            margin-bottom: rem(4);
+            font-size: rem(20);
+            font-weight: 400;
+            border: 1px solid rgba(197, 251, 216, 0.1);
+            border-radius: 6px;
+            transition: all ease 0.6s;
+            &:hover {
+                border-color: rgba(197, 251, 216, 0.3);
+                box-shadow: 0 0 10px rgba(197, 251, 216, 0.2);
+            }
+            & svg {
+                display: block;
+                fill: transparent;
+                stroke: rgb(197, 251, 216);
+                width: 18px;
+                height: 18px;
+                padding: 3px;
+                box-sizing: border-box;
+                transition: all ease 0.3s;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+.block {
+    &__subtitle {
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: rem(24);
+        color: rgba(185, 216, 211, 0.8);
+        white-space: nowrap;
+    }
+    &__list {
+        font-size: rem(14);
+        line-height: rem(24);
+        color: #c1c7cd;
+        margin-bottom: rem(24);
+    }
+    &__link {
+        color: inherit;
+        transition: all ease 0.5s;
+        position: relative;
+        white-space: nowrap;
+        &:hover {
+            color: #fff;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            background: #ffffff;
+            transition: all ease 0.3s;
+            transform: scaleX(0);
+        }
+        &:hover::after {
+            transform: scaleX(1);
+        }
+        & .active {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: 0;
+                background: #f5b963;
+                z-index: 1;
+            }
+        }
+    }
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+.title {
+    &__about {
+    }
+    &__cabins {
+    }
+    &__inspired {
+        grid-column: 3 / 5;
+    }
+    &__support {
+    }
+}
+.block-about {
+}
+.block-cabins {
+    &__north {
+    }
+    &__south {
+        grid-column: 2 / 3;
+    }
+}
+.block-inspired {
+    &__explore {
+    }
+    &__rest {
+    }
+    &__food {
+    }
+    &__for-you {
+    }
+}
+.block-support {
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}

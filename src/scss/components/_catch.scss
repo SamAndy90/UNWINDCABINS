@@ -1,0 +1,72 @@
+.catch {
+    padding: rem(78) 0 rem(75);
+    background: #F2FAF9;
+    &__container {
+        padding: rem(103) rem(15) rem(101);
+        position: relative;
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+        &::before {
+            background: linear-gradient(90deg, #181816 35%, #00000000 70% );
+            width: 112%;
+            left: -12%;
+            z-index: 1;
+            @media (max-width: $mobile) {
+                background: linear-gradient(90deg, #181816 40%, #00000000 87% );
+            }
+            @media (max-width: $mobileSmall) {
+                background: linear-gradient(90deg, #181816 40%, #00000000 100% );
+            }
+        }
+        &::after {
+            background: url('@img/girl-with-book.jpeg' ) center / cover no-repeat;
+            width: 76%;
+            right: -20px;
+        }
+    }
+    &__content {
+        max-width: rem(520);
+        position: relative;
+        z-index: 2;
+    }
+    &__title {
+        color: #F2FAF9;
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+        font-size: rem(44);
+        line-height: rem(54);
+        margin-bottom: rem(26);
+    }
+    &__description {
+        font-size: rem(14);
+        line-height: rem(24);
+        color: #F2FAF9;
+        margin-bottom: rem(26);
+
+    }
+    &__link {
+        display: inline-block;
+        line-height: rem(28);
+        padding: rem(13) rem(40);
+        color: #000;
+        background: $yellow;
+        border-radius: 4px;
+        transition: all ease 0.3s;
+        &:hover {
+            color: #ffffff;
+            background: #e6a74f;
+        }
+        @media (max-width: $mobileSmall) {
+            display: block;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+    }
+}

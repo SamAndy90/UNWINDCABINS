@@ -1,0 +1,105 @@
+.header {
+    &.active {
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        transition: all ease 0.3s;
+    }
+    background: #fff;
+    &__burger {
+        display: none;
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(26) 0;
+        @media (max-width: $mobile) {
+            padding: rem(21) 0;
+        }
+
+    }
+    &__logo {
+        margin-right: rem(10);
+        padding: rem(12) 0;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: rem(32);
+        margin-left: rem(10);
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: rem(32);
+        & li {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                bottom: -3px;
+                background: #166527;
+                transition: all ease 0.3s;
+                transform: scaleX(0);
+            }
+            &:hover::after {
+                transform: scaleX(1);
+            }
+            & .active {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                    bottom: -3px;
+                    transform: scaleX(1);
+                    background: #F5B963;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    &__link {
+        color: inherit;
+        // position: relative;
+    }
+    &__login {
+        line-height: 0;
+        cursor: pointer;
+        &--icon {
+            background: #f2faf9;
+            border: 1px solid #3f3f3f;
+            border-radius: 50%;
+            width: rem(19.5);
+            height: rem(19.5);
+            padding: rem(13.25);
+            box-sizing: content-box;
+            fill: #3f3f3f;
+            transition: all ease 0.3s;
+            &:hover {
+                fill: #1a3724;
+                border: 1px solid #1a3724;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+.logo {
+    &__link {
+        &--first {
+            color: #166527;
+            font-weight: 600;
+        }
+        &--second {
+            color: #1a3724;
+            font-weight: 800;
+        }
+    }
+}

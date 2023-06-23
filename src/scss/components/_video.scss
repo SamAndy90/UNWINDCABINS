@@ -1,0 +1,112 @@
+.video {
+    padding: rem(106) 0 rem(78);
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include adaptive-value('gap', 67, 10, 1);
+        @media (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+    &__content {
+        max-width: 40%;
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+
+    }
+    &__title {
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+        font-size: rem(28);
+        line-height: rem(26);
+        color: #22223C;
+        margin-bottom: rem(34);
+        position: relative;
+        &--underline {
+            position: absolute;
+            height: 2px;
+            left: 0;
+            bottom: -8px;
+            width: 0px;
+            background: $yellow;
+            transition: all ease 0.6s 0.4s;
+            &._active {
+                width: 74px;
+            }
+        }
+    }
+    &__decription {
+        font-size: rem(14);
+        line-height: rem(24);
+        color: #47475F;
+        & p {
+            margin-bottom: rem(24);
+        }
+    }
+    &__link {
+        font-weight: 600;
+        font-size: rem(14);
+        line-height: rem(24);
+        color: #606872;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: -1px;
+            background: #606872;
+            transform: scaleX(0);
+            transition: all ease 0.3s;
+        }
+        &:hover::after {
+            transform: scaleX(1);
+        }
+        &--arrow {
+            fill: transparent;
+            stroke: #606872;
+            width: 18px;
+            height: 18px;
+            padding: 3px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            margin-left: rem(10);
+            transition: all ease 0.5s;
+        }
+        &:hover > svg {
+            margin-left: rem(20);
+        }
+    }
+    &__video {
+        flex: 1 1 60%;
+        position: relative;
+        line-height: 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #88898B, 0 2px 24px #8A9194;
+        @media (max-width: $tablet) {
+            flex: 1 1 100%;
+        }
+    }
+    &__player {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        & video {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__circles {
+        fill: #BEC2D9;
+        position: absolute;
+        top: rem(-45);
+        right: rem(-45);
+        width: rem(150);
+        height: rem(150);
+        z-index: -1;
+    }
+}

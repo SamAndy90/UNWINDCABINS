@@ -1,0 +1,65 @@
+.escape {
+   background: url("@img/spikes.svg") center 110% / 100% no-repeat,
+      linear-gradient(to top, #0C1011, #1f3d3e 2%, #1f3d3e00 22%),
+      linear-gradient(to right, #00000080 45%, #00000000 55%),
+      url("@img/camp.jpg") center 90% / cover no-repeat;
+   padding: rem(210) 0 rem(288);
+   @media (max-width: $pc) {
+      background: url("@img/spikes.svg") center bottom / 100% no-repeat,
+         linear-gradient(to top, #0C1011, #1f3d3e, #1f3d3e00 19%),
+         linear-gradient(to right, #00000080 45%, #00000000 60%),
+         url("@img/camp.jpg") center 90% / cover no-repeat;
+   }
+   @media (max-width: $tablet) {
+      background: url("@img/spikes.svg") center bottom / 100% no-repeat,
+         linear-gradient(to top, #0C1011, #1f3d3e, #1f3d3e00 19%),
+         linear-gradient(to right, #00000080 45%, #00000000 65%),
+         url("@img/camp.jpg") center 90% / cover no-repeat;
+      padding: rem(180) 0 rem(258);
+   }
+   @media (max-width: $mobile) {
+      background: url("@img/spikes.svg") center bottom / 140% no-repeat,
+         linear-gradient(to top, #0C1011, #1f3d3e, #1f3d3e00 16%),
+         linear-gradient(to right, #00000080 45%, #00000000 85%),
+         url("@img/camp.jpg") center 90% / cover no-repeat;
+      padding: rem(160) 0 rem(228);
+   }
+   &__content {
+      max-width: rem(520);
+      z-index: 10;
+   }
+   &__title {
+      font-family: "Source Serif Pro";
+      font-weight: 700;
+      font-size: rem(44);
+      line-height: rem(54);
+      color: #fff;
+      margin-bottom: rem(20);
+   }
+   &__descrption {
+      font-size: rem(14);
+      line-height: rem(24);
+      margin-bottom: rem(40);
+      color: #fff;
+   }
+   &__link {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      color: #173333;
+      padding: rem(8) rem(16);
+      background: #d4eeec;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all ease 0.4s;
+      &:hover {
+         color: #d4eeec;
+         background: #173333;
+      }
+      @media (max-width: $mobileSmall) {
+         display: block;
+         text-align: center;
+      }
+   }
+}

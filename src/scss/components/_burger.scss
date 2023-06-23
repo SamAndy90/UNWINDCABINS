@@ -1,0 +1,90 @@
+@media (max-width: $mobile) {
+    body.lock {
+        overflow: hidden;
+    }
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
+
+        &__burger {
+            display: block;
+            position: relative;
+            flex: 0 0 25px;
+            height: 20px;
+            z-index: 3;
+            & span {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                top: 9px;
+                background-color: #1a3724;
+                transition: all 0.3s ease;
+            }
+            &::after,
+            &::before {
+                content: ("");
+                background-color: #1a3724;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                transition: all 0.3s ease;
+            }
+            &::after {
+                bottom: 0;
+            }
+            &::before {
+                top: 0;
+            }
+            &.active span {
+                transform: scale(0);
+            }
+            &.active::before {
+                transform: rotate(-45deg);
+                top: 9px;
+                background: #fff;
+            }
+            &.active::after {
+                transform: rotate(45deg);
+                bottom: 9px;
+                background: #fff;
+            }
+    
+        }
+        &__menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            gap: rem(25);
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            // background-color: #1a3724;
+            background: linear-gradient(160deg, #0f2316, #0C1011);
+            transition: all 0.3s ease-in-out;
+            overflow: auto;
+        }
+        &__menu.active {
+            right: 0;
+        }
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: rem(70);
+            row-gap: rem(20);
+            margin-bottom: rem(15);
+        }
+        &__link {
+            color: #fff;
+            font-size: rem(24);
+            line-height: rem(48);
+        }
+    }
+}

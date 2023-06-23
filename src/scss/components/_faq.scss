@@ -1,0 +1,113 @@
+.faq {
+    padding: rem(60) 0;
+    &__title {
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+        font-size: rem(28);
+        line-height: rem(56);
+        color: #1F3D3E;
+        margin-bottom: rem(41);
+        @media (max-width: $mobileSmall) {
+            line-height: rem(36);
+        }
+    }
+    &__questions {
+    }
+    &__more-questions {
+        margin-top: rem(46);
+        &--title {
+            font-weight: 600;
+            line-height: rem(10);
+            margin-bottom: rem(12);
+        }
+        &--text {
+            font-size: rem(14);
+            line-height: rem(18);
+        }
+        &--link {
+            color: #000;
+            font-weight: 600;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.question {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include adaptive-value('gap', 50, 10, 1);
+        &:not(:last-child) {
+            margin-bottom: rem(34);
+        }
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+    &__text {
+        flex: 1 1 40%;
+        padding-left: rem(14);
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+    }
+    &__title {
+        font-weight: 600;
+        line-height: rem(22);
+        color: #44445C;
+    }
+    &__list {
+    }
+    &__item {
+        font-size: rem(14);
+        line-height: rem(22);
+        color: #4A4A4A;
+        &::before {
+            content: '•';
+            display: inline-block;
+            width: 10px;
+        }
+    }
+    &__tab {
+        flex: 1 1 65%;
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        background: #F5B963;
+        border: 1px solid #BEC2D9;
+        border-radius: 6px;
+        padding: rem(27) rem(22) rem(27) rem(31);
+        transition: all ease 0.4s;
+        &:hover {
+            background: #df9f47;
+            color: #fff;
+        }
+        &:hover svg {
+            stroke: #ffffff;
+        }
+        &--text {
+            font-weight: 500;
+            font-size: rem(14);
+            line-height: rem(21);
+        }
+        &--icon {
+            fill: transparent;
+            stroke: #73572E;
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+            transition: all ease 0.4s;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}

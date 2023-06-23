@@ -1,0 +1,202 @@
+@keyframes heart-anime {
+    0% {
+        transform: scale(1);
+        stroke: rgb(255, 255, 255);
+    }
+    100% {
+        transform: scale(1.1);
+        stroke: rgba(255, 52, 52, 0.5);
+    }
+}
+
+.page__cabins {
+    padding-top: rem(114);
+    padding-bottom: rem(50);
+}
+
+.cabins {
+    &__title {
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+        font-size: rem(28);
+        line-height: rem(26);
+        color: #22223C;
+        margin-bottom: rem(33);
+        position: relative;
+        &--underline {
+            position: absolute;
+            height: 2px;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            background: $yellow;
+            transition: all ease 0.6s 0.4s;
+            &._active {
+                width: 122px;
+            }
+        }
+        @media (max-width: $mobile) {
+            margin-bottom: rem(16);
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: rem(30);
+        }
+        margin-bottom: rem(40);
+    }
+    &__description {
+        line-height: rem(28);
+        color: #47475F;
+    }
+    &__link {
+        position: relative;
+        font-weight: 500;
+        line-height: rem(24);
+        color: #4A4A4A;
+        min-width: 121px;
+        align-self: flex-end;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: -1px;
+            background: #4A4A4A;
+            transform: scaleX(0);
+            transition: all ease 0.3s;
+        }
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        gap: (rem(12));
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+    &__card {
+        flex: 0 1 33.3333%;
+        @media (max-width: $mobile) {
+            flex: 0 1 auto;
+        }
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all ease 0.7s;
+        &:hover {
+            transform:translateY(-10px);
+            box-shadow: 0 0 20px rgba(26, 55, 36, 0.6);
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &__icon {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 1;
+        padding: 14.75px 14px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.7);
+        line-height: 0;
+        &:hover svg {
+            animation: heart-anime 0.7s linear infinite alternate 0.2s;
+        }
+        &--item {
+            width: 20px;
+            height: 18.5px;
+            fill: transparent;
+            stroke: #ffffff;
+        }
+    }
+    &__image {
+        position: relative;
+        padding-bottom: 73%;
+        overflow: hidden;
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            transition: all ease 0.8s;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+    &__info {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: rem(13) rem(18) rem(19);
+        background: #2B3030;
+    }
+    &__subtitle {
+        color: #D7FFF1;
+        font-size: rem(12);
+        line-height: rem(26);
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__title {
+        color: #ffffff;
+        font-size: rem(20);
+        line-height: rem(26);
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: rem(20);
+        &--title {
+            font-family: 'Source Serif Pro';
+            font-weight: 700;
+        }
+        &--price {
+            font-weight: 600;
+            & span {
+                vertical-align: super;
+                line-height: initial;
+                font-size: 12px;
+            }
+        }
+    }
+    &__description {
+        flex: 1 1 auto;
+        color: #E0F2EB;
+        font-size: rem(14);
+        line-height: rem(24);
+        margin-bottom: rem(24);
+    }
+    &__reviews {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: rem(10);
+    }
+}
+
+.reviews {
+    &__text {
+        font-size: rem(14);
+        line-height: rem(18);
+        letter-spacing: 4%;
+        color: #ffffff;
+    }
+}

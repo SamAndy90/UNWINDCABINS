@@ -1,0 +1,34 @@
+.feedback {
+    background: url('@img/purple-woman.jpeg') center / cover no-repeat;
+    padding: rem(148) 0 rem(168);
+
+    &__body {
+        margin-left: auto;
+        max-width: rem(419);
+        color: #fff;
+    }
+    &__title {
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+        font-size: rem(44);
+        line-height: rem(54);
+        margin-bottom: rem(20);
+    }
+    &__description {
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: rem(24);
+        margin-bottom: rem(54);
+        & p:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+    }
+}
+.rate {
+    &__date {
+        font-family: 'Helvetica';
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: rem(20);
+    }
+}
