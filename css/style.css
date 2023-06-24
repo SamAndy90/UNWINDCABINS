@@ -5,7 +5,7 @@
 500;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:regular,700&display=swap");
 @font-face {
-  font-family: Helvetica Regular;
+  font-family: Helvetica;
   font-display: swap;
   src: url("../fonts/Helvetica Regular.woff2") format("woff2"), url("../fonts/Helvetica Regular.woff") format("woff");
   font-weight: 400;
@@ -125,7 +125,7 @@ button:active {
 }
 
 body {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   background: #ffffff;
